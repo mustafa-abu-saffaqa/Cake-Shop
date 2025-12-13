@@ -17,7 +17,7 @@ import cakes.Cake;
  * </pre>
  * 
  * @author Mustafa Abu Saffaqa
- * @version 1.0
+ * @version 2.0
  */
 public class SkittlesDecorator extends CakeDecorator {
     

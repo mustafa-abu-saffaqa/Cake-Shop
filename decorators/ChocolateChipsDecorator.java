@@ -18,7 +18,7 @@ import cakes.Cake;
  * </pre>
  * 
  * @author Amer Abuyaqob
- * @version 1.0
+ * @version 2.0
  */
 public class ChocolateChipsDecorator extends CakeDecorator {
     

@@ -19,7 +19,7 @@ import cakes.Cake;
  * created after the change, preserving the original cost for previously created objects.
  * 
  * @author Amer Abuyaqob
- * @version 1.0
+ * @version 2.0
  */
 public abstract class CakeDecorator extends Cake {
     protected Cake decoratedCake;
