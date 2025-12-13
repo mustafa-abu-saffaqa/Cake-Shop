@@ -1,6 +1,6 @@
 package decorators;
 
-import cake.Cake;
+import cakes.Cake;
 
 /**
  * Abstract base class for cake decorators following the Decorator pattern.
