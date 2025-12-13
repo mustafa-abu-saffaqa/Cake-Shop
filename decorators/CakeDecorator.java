@@ -72,7 +72,7 @@ public abstract class CakeDecorator extends Cake {
     @Override
     public String describe() {
         String baseDescription = this.decoratedCake.describe();
-        String decorationName = getDecorationName();  // Always read current value
+        String decorationName = this.getDecorationName();  // Always read current value
         
         // If no "with" exists, this is the first decoration
         if (!baseDescription.contains("with")) {
@@ -123,6 +123,6 @@ public abstract class CakeDecorator extends Cake {
      */
     @Override
     public double getCost() {
-        return this.decoratedCake.getCost() + getDecorationCost();  // Always read current value
+        return this.decoratedCake.getCost() + this.getDecorationCost();  // Always read current value
     }
 }
