@@ -30,7 +30,7 @@ public class SkittlesDecorator extends CakeDecorator {
      * @param decoratedCake The cake instance to be decorated with skittles
      */
     public SkittlesDecorator(Cake decoratedCake) {
-        super(decoratedCake);
+        super(decoratedCake, SKITTLES_COST);
     }
 
     /**
@@ -86,15 +86,4 @@ public class SkittlesDecorator extends CakeDecorator {
         return baseDescription + ", and Skittles";
     }
 
-    /**
-     * Returns the total cost of the cake including skittles.
-     * 
-     * <p>Adds the skittles cost to the wrapped cake's total cost.
-     * 
-     * @return The total cost including the base cake and skittles
-     */
-    @Override
-    public double getCost() {
-        return this.decoratedCake.getCost() + SKITTLES_COST;
-    }
 }

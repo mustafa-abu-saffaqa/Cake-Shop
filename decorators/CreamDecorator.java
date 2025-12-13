@@ -30,7 +30,7 @@ public class CreamDecorator extends CakeDecorator {
      * @param decoratedCake The cake instance to be decorated with cream
      */
     public CreamDecorator(Cake decoratedCake) {
-        super(decoratedCake);
+        super(decoratedCake, CREAM_COST);
     }
 
     /**
@@ -86,15 +86,4 @@ public class CreamDecorator extends CakeDecorator {
         return baseDescription + ", and Cream";
     }
 
-    /**
-     * Returns the total cost of the cake including cream.
-     * 
-     * <p>Adds the cream cost to the wrapped cake's total cost.
-     * 
-     * @return The total cost including the base cake and cream
-     */
-    @Override
-    public double getCost() {
-        return this.decoratedCake.getCost() + CREAM_COST;
-    }
 }

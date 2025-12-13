@@ -31,7 +31,7 @@ public class ChocolateChipsDecorator extends CakeDecorator {
      * @param decoratedCake The cake instance to be decorated with chocolate chips
      */
     public ChocolateChipsDecorator(Cake decoratedCake) {
-        super(decoratedCake);
+        super(decoratedCake, CHOCOLATE_CHIPS_COST);
     }
 
     /**
@@ -87,15 +87,4 @@ public class ChocolateChipsDecorator extends CakeDecorator {
         return baseDescription + ", and Chocolate Chips";
     }
 
-    /**
-     * Returns the total cost of the cake including chocolate chips.
-     * 
-     * <p>Adds the chocolate chips cost to the wrapped cake's total cost.
-     * 
-     * @return The total cost including the base cake and chocolate chips
-     */
-    @Override
-    public double getCost() {
-        return this.decoratedCake.getCost() + CHOCOLATE_CHIPS_COST;
-    }
 }

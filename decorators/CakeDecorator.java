@@ -10,24 +10,28 @@ import cakes.Cake;
  * modifying the original cake object.
  * 
  * <p>Concrete decorators (e.g., ChocolateChips, Cream, Skittles) extend this
- * class and override {@link #describe()} and {@link #getCost()} to add their
- * specific features and costs.
+ * class and override {@link #describe()} to add their specific features. The cost
+ * calculation is centralized here and uses the {@link #decorationCost} field set
+ * by each concrete decorator's constructor.
  * 
  * @author Amer Abuyaqob
  * @version 1.0
  */
 public abstract class CakeDecorator extends Cake {
     protected Cake decoratedCake;
+    protected double decorationCost;
 
     /**
      * Constructs a new CakeDecorator wrapping the given cake.
      * 
      * @param decoratedCake The cake instance to be decorated
+     * @param decorationCost The cost of this decoration to be added to the total
      */
-    public CakeDecorator(Cake decoratedCake) {
+    public CakeDecorator(Cake decoratedCake, double decorationCost) {
         super(decoratedCake.getOrderID(), decoratedCake.getBaseName(), 
               decoratedCake.getSize(), decoratedCake.getBasePrice());
         this.decoratedCake = decoratedCake;
+        this.decorationCost = decorationCost;
     }
 
     /**
@@ -43,12 +47,15 @@ public abstract class CakeDecorator extends Cake {
 
     /**
      * Returns the total cost of the decorated cake.
-     * Concrete decorators should override this to add their own cost.
+     * 
+     * <p>This method is centralized in the base class and adds the decoration cost
+     * to the wrapped cake's total cost. Concrete decorators pass their cost via the
+     * constructor and do not need to override this method.
      * 
      * @return The total cost including all decorations
      */
     @Override
     public double getCost() {
-        return this.decoratedCake.getCost();
+        return this.decoratedCake.getCost() + this.decorationCost;
     }
 }
