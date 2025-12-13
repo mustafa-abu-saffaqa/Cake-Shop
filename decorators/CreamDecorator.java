@@ -13,7 +13,7 @@ import cakes.Cake;
  * <p>Example usage:
  * <pre>
  * Cake base = new ChocolateCake(1, "Large", 12.50);
- * Cake decorated = new CreameDecorator(base);
+ * Cake decorated = new CreamDecorator(base);
  * System.out.println(decorated.describe()); // "Order #1: Chocolate Cake (Large) with Cream"
  * System.out.println(decorated.getCost()); // 14.50
  * </pre>
@@ -21,7 +21,7 @@ import cakes.Cake;
  * @author Mustafa Abu Saffaqa
  * @version 1.0
  */
-public class CreameDecorator extends CakeDecorator {
+public class CreamDecorator extends CakeDecorator {
 
     /**
      * The additional cost for adding cream to the cake.
@@ -29,11 +29,11 @@ public class CreameDecorator extends CakeDecorator {
     private static final double CREAM_COST = 2.0;
 
     /**
-     * Constructs a new CreameDecorator wrapping the given cake.
+     * Constructs a new CreamDecorator wrapping the given cake.
      *
      * @param decoratedCake The cake instance to be decorated with cream
      */
-    public CreameDecorator(Cake decoratedCake) {
+    public CreamDecorator(Cake decoratedCake) {
         super(decoratedCake);
     }
 
